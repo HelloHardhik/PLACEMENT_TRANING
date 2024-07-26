@@ -1,0 +1,16 @@
+# hangman.py
+import random
+word_list = ["apple", "banana", "cherry"]
+chosen_word = random.choice(word_list)
+guesses = 6
+while guesses > 0:
+    user_guess = input("Guess a letter: ")
+    if user_guess in chosen_word:
+        print("Correct!")
+    else:
+        guesses -= 1
+        print(f"Incorrect! You have {guesses} guesses left.")
+if guesses == 0:
+    print("You lost!")
+else:
+    print("Congratulations! You won!")
