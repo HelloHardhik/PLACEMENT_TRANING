@@ -1,0 +1,19 @@
+# student_database.py
+students = []
+while True:
+    print("1. Add student")
+    print("2. View students")
+    print("3. Exit")
+    choice = input("Choose an option: ")
+    if choice == "1":
+        name = input("Enter student name: ")
+        grade = input("Enter student grade: ")
+        students.append({"name": name, "grade": grade})
+    elif choice == "2":
+        for student in students:
+            print(f"Name: {student['name']}")
+            print(f"Grade: {student['grade']}")
+    elif choice == "3":
+        break
+    else:
+        print("Invalid option")
