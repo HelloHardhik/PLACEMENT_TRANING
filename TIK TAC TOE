@@ -1,0 +1,21 @@
+# tic_tac_toe.py
+board = [" " for _ in range(9)]
+while True:
+    print(" 1 | 2 | 3")
+    print("---+---+---")
+    print(" 4 | 5 | 6")
+    print("---+---+---")
+    print(" 7 | 8 | 9")
+    user_move = input("Enter move (1-9): ")
+    board[int(user_move) - 1] = "X"
+    computer_move = random.choice([i for i, x in enumerate(board) if x == " "])
+    board[computer_move] = "O"
+    if "X" in board and "O" in board:
+        print("It's a tie!")
+        break
+    elif "X" in board and "O" not in board:
+        print("You win!")
+        break
+    elif "O" in board and "X" not in board:
+        print("Computer wins!")
+        break
