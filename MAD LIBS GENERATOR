@@ -1,0 +1,9 @@
+# mad_libs.py
+print("Welcome to Mad Libs!")
+name = input("Enter a name: ")
+adjective = input("Enter an adjective: ")
+verb = input("Enter a verb: ")
+noun = input("Enter a noun: ")
+
+story = f"One day, {name} was walking down the street when they saw a {adjective} {noun}. They decided to {verb} it and see what happened."
+print(story)
