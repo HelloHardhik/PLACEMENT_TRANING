@@ -1,0 +1,19 @@
+# simple_blog.py
+posts = []
+while True:
+    print("1. Create post")
+    print("2. View posts")
+    print("3. Exit")
+    choice = input("Choose an option: ")
+    if choice == "1":
+        title = input("Enter post title: ")
+        content = input("Enter post content: ")
+        posts.append({"title": title, "content": content})
+    elif choice == "2":
+        for post in posts:
+            print(f"Title: {post['title']}")
+            print(f"Content: {post['content']}")
+    elif choice == "3":
+        break
+    else:
+        print("Invalid option")
