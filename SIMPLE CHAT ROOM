@@ -1,0 +1,23 @@
+# chat_room.py
+import socket
+
+# Set up the server
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_socket.bind(("localhost", 12345))
+server_socket.listen(5)
+
+print("Server started. Waiting for connections...")
+
+while True:
+    client_socket, address = server_socket.accept()
+    print(f"Connection from {address}")
+
+    while True:
+        message = client_socket.recv(1024).decode()
+        if not message:
+            break
+        print(f"Client: {message}")
+        response = input("Server: ")
+        client_socket.send(response.encode())
+
+    client_socket.close()
